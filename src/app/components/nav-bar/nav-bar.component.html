@@ -1,0 +1,92 @@
+ <!-- navbar -->
+ <nav class="navbar navbar-expand-lg bg-body-white">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-2 fw-bold" href="#">Fotos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class=" d-flex" id="navbarNav">
+        <ul class="navbar-nav me-2">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><button (click)="openModalPhoto()" type="button" class="btn btn-dark">Pesquisa</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><button (click)="openModalSend()"   type="button" class="btn btn-danger">Enviar uma foto</button></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- modal foto -->
+  <div class="modal fade " id="myModal"data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <img style="border-radius: 10px;" src="../../../assets/img-1.jpg" alt="">
+              </div>
+              <div class="col-6"><h4>Pessoas diversas felizes, sentadas no campo coberto e fazendo piquenique no jardim, é o titulo da imagem</h4>
+                <h4  class="btn btn-success"><i class="bi bi-arrow-down"></i>Baixar Imagem - AOA 1,000.00</h4>
+               <br><br>
+               <ul type="none" style="display: flex;">
+                  <li style="margin-right: 70px;"><i class="bi bi-arrow-down"></i>123,456,345 Donwloads</li>
+                  <li><i class="bi bi-eye-fill"></i>123,564,678 views</li>
+                </ul>
+                <ul type="none">
+                  <li class="fs-6">Publicado em 17 de julho de 2023</li>
+                  <li class="fs-6">Fotografada com Sony Xperia IID Mark 3</li>
+                </ul>
+              </div>
+            </div>
+            <br>
+            <h5>Imagens semelhantes a essa</h5>
+            <div class="row">
+              <div class="col-12">
+                <app-my-photo></app-my-photo>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; margin:4px ;">
+          <h6 type="button" class="btn btn-secondary" (click)="closeModalPhoto" data-bs-dismiss="modal">Close</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- modal enviar foto -->
+
+<div class="modal fade " id="myModalSend"data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1>Enviar Imagens</h1>
+              <p>Envie uma ou mais imagens, clicando nos quadrados abaixo</p>
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+              <h5>Titulo da Foto</h5>
+              <input type="text">
+              <h5>Categoria(adicione manualmente aqui)</h5>
+              <input type="text">
+              <div class="radioModal">
+                <i class="bi bi-app" ></i><span style="padding-right: 5px;">gratis</span>
+                <i class="bi bi-app"></i><span>pago</span>
+              </div>
+              <h3>preco</h3>
+              <input type="number" name="" id="">:
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; margin-left:4px; padding: 5px;" class="button">
+        <button type="button" class="btn btn-success" (click)="closeModalSend" data-bs-dismiss="modal">Enviar foto</button>
+        <button style="margin-left: 10px;" type="button" class="btn btn-secondary">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
